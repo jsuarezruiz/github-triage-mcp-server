@@ -57,6 +57,10 @@ The MCP Inspector is an interactive developer tool designed for testing and debu
 * `triage_summary_issue`: Fetches a summary of a GitHub issue, including metadata, labels, and comments (LLM).
 * `triage_add_labels_issue`: Applies specified labels to a GitHub issue, using the issue details and some specific instructions (LLM).
 
+### Gallery
+
+<img src="https://raw.githubusercontent.com/jsuarezruiz/github-triage-mcp-server/refs/heads/main/images/triage-tools.png" width="30%"></img> <img src="https://raw.githubusercontent.com/jsuarezruiz/github-triage-mcp-server/refs/heads/main/images/triage-issue-list.png" width="30%"></img>
+
 ### Contributing
 
 **I gladly welcome contributions** to help improve this project! Whether you're fixing bugs, adding new features, or enhancing documentation, your support is greatly appreciated.
