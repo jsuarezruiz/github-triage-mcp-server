@@ -36,8 +36,9 @@ To use this server, ensure the following tools are installed on your development
         "--project",
         "/Users/jsuarezruiz/GitHub/mobile-dev-mcp-server/src/GitHubTriageMcpServer.csproj"
     ],
-    "env": {
-    "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>"
+    "env": { 
+    "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>",
+    "OPENAI_API_KEY": "<YOUR_API_KEY>",
     }
 }
 ```
