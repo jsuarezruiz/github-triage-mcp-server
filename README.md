@@ -42,6 +42,12 @@ To use this server, ensure the following tools are installed on your development
 }
 ```
 
+### Testing
+
+The MCP Inspector is an interactive developer tool designed for testing and debugging MCP servers. Can start the inspector from our application folder using the nodejs command npx with the following command:
+
+`npx @modelcontextprotocol/inspector dotnet run`
+
 ### Tools
 
 * `triage_get_issues_count`: Fetches the count of open issues in the specified GitHub repository.
