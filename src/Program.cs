@@ -28,8 +28,6 @@ try
     var app = builder.Build();
     await app.RunAsync();
     
-    Log.Information("Server running");
-
     return 0;
 }
 catch (Exception ex)
