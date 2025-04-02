@@ -44,10 +44,11 @@ To use this server, ensure the following tools are installed on your development
 
 ### Tools
 
-* `triage_get_issues_count`: Fetches the count of open issues in the specified GitHub repository..
+* `triage_get_issues_count`: Fetches the count of open issues in the specified GitHub repository.
 * `triage_get_issues`: Fetches and formats a list of open issues in the specified GitHub repository.
-* `triage_get_labels_count`: Fetches the total number of labels in the specified GitHub repository..
-* `triage_get_labels`: Fetches and formats a list of labels in the specified GitHub repository..
+* `triage_get_labels_count`: Fetches the total number of labels in the specified GitHub repository.
+* `triage_get_labels`: Fetches and formats a list of labels in the specified GitHub repository.
+* `triage_summary_issue`: Fetches a summary of a GitHub issue, including metadata, labels, and comments (LLM).
 * `triage_add_labels_issue`: Applies specified labels to a GitHub issue, using the issue details and some specific instructions (LLM).
 
 ### Contributing
