@@ -11,7 +11,6 @@ The GitHub Triage MCP assist with the management and automation of triage workfl
 
 **Label Management**:
 * Fetch all labels associated with a repository as a formatted string or table.
-* Programmatically create new labels.
 * Add labels to issues or pull requests based on specific criteria and instructions.
 
 ### Prerequisites
