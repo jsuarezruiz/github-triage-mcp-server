@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.AI;
 using ModelContextProtocol.Server;
-using OpenAI;
 using System.ComponentModel;
 
 namespace GitHubTriageMcpServer
@@ -237,12 +236,6 @@ namespace GitHubTriageMcpServer
                 string labels = await gitHubService.GetLabelsAsStringAsync(owner, repo);
                 string issueDetails = await gitHubService.GetIssueDetailsAsync(owner, repo, issueNumber);
 
-                IChatClient chatClient = new OpenAIClient(Environment.GetEnvironmentVariable("OPENAI_API_KEY"))
-                    .AsChatClient("gpt-4o")
-                    .AsBuilder()
-                    .UseFunctionInvocation()
-                    .Build();
-
                 ChatMessage[] messages =
                 [
                     new(ChatRole.System, SummaryIssuePrompt),
@@ -261,7 +254,7 @@ namespace GitHubTriageMcpServer
                     Temperature = 0.7f,
                 };
 
-                var response = await chatClient.GetResponseAsync(messages, options, cancellationToken);
+                var response = await thisServer.AsSamplingChatClient().GetResponseAsync(messages, options, cancellationToken);
 
                 if (response is not null)
                 {
@@ -298,12 +291,6 @@ namespace GitHubTriageMcpServer
                 string labels = await gitHubService.GetLabelsAsStringAsync(owner, repo);
                 string issueDetails = await gitHubService.GetIssueDetailsAsync(owner, repo, issueNumber);
 
-                IChatClient chatClient = new OpenAIClient(Environment.GetEnvironmentVariable("OPENAI_API_KEY"))
-                    .AsChatClient("gpt-4o")
-                    .AsBuilder()
-                    .UseFunctionInvocation()
-                    .Build();
-
                 ChatMessage[] messages =
                 [
                     new(ChatRole.System, AddLabelsPrompt),
@@ -322,7 +309,7 @@ namespace GitHubTriageMcpServer
                     Temperature = 0.7f,
                 };
                
-                var response = await chatClient.GetResponseAsync(messages, options, cancellationToken);
+                var response = await thisServer.AsSamplingChatClient().GetResponseAsync(messages, options, cancellationToken);
 
                 if (response is not null)
                 {

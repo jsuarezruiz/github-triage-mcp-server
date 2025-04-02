@@ -37,7 +37,6 @@ To use this server, ensure the following tools are installed on your development
     ],
     "env": { 
     "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>",
-    "OPENAI_API_KEY": "<YOUR_API_KEY>",
     }
 }
 ```
