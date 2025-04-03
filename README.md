@@ -54,7 +54,7 @@ The MCP Inspector is an interactive developer tool designed for testing and debu
 * `triage_get_labels_count`: Fetches the total number of labels in the specified GitHub repository.
 * `triage_get_labels`: Fetches and formats a list of labels in the specified GitHub repository.
 * `triage_summary_issue`: Fetches a summary of a GitHub issue, including metadata, labels, and comments (LLM).
-* `triage_add_labels_issue`: Applies specified labels to a GitHub issue, using the issue details and some specific instructions (LLM).
+* `triage_add_labels_issue`: Applies specified labels to a GitHub issue, using the issue details and some specific instructions.
 
 ### Gallery
 
