@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using ModelContextProtocol;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
@@ -21,6 +21,7 @@ try
     builder.Services
         .AddMcpServer()
         .WithStdioServerTransport()
+        .WithPromptsFromAssembly()
         .WithToolsFromAssembly();
 
     builder.Logging.ClearProviders();

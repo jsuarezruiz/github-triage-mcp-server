@@ -1,4 +1,5 @@
 ﻿using Octokit;
+using System.Xml.Linq;
 
 /// <summary>
 /// Provides methods for interacting with the GitHub API using the Octokit library.
@@ -219,6 +220,28 @@ public class GitHubService
         catch (Exception ex)
         {
             LogError($"Failed to create label '{name}'", ex);
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Adds labels to an existing GitHub issue.
+    /// </summary>
+    /// <param name="owner">The repository owner's username or organization name.</param>
+    /// <param name="repoName">The repository name.</param>
+    /// <param name="issueNumber">The issue number to which labels will be added.</param>
+    /// <param name="labels">An array of labels to add to the issue.</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
+
+    public async Task AddLabelsToIssueAsync(string owner, string repoName, int issueNumber, string[] labels)
+    {
+        try
+        {
+            await _client.Issue.Labels.AddToIssue(owner, repoName, issueNumber, labels);
+        }
+        catch (Exception ex)
+        {
+            LogError($"Failed to add labels to the issue '{issueNumber}'", ex);
             throw;
         }
     }
